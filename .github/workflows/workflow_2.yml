@@ -1,0 +1,10 @@
+name: Issue open
+on:
+  issues:
+    types: opened
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get context
+        uses: echo "${{ toJSON(github) }}"
